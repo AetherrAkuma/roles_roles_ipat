@@ -2,28 +2,31 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 
-const Dashboard = () => {
+const Dashboard4 = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [userRole, setRole] = useState("");
 
   useEffect(() => {
-    // Retrieve username and role from localStorage
+    // Retrieve the user and role from localStorage
     const storedUser = localStorage.getItem("username");
     const storedRole = localStorage.getItem("role");
+
+    console.log("Stored User:", storedUser); // Debugging log
+    console.log("Stored Role:", storedRole); // Debugging log
 
     if (storedUser && storedRole) {
       setUser(storedUser);
       setRole(storedRole);
 
-      // If role is not Admin, redirect to the staff page
-    if (storedRole !== "Admin") {
-        navigate("/staff");
+      // If the user is not a staff member, redirect them
+      if (storedRole !== "Staff3") {
+        console.log("Eto ata Not Staff, redirecting to login..."); // Debugging log
+        navigate("/login");
       }
     } else {
-      // If no user or role found in localStorage, redirect to login
-      console.log("No user or role found, redirecting to login...");
-      navigate("/login");
+      console.log("No user or role found, redirecting to login..."); // Debugging log
+
     }
   }, [navigate]);
 
@@ -37,10 +40,10 @@ const Dashboard = () => {
         variant="contained"
         color="secondary"
         onClick={() => {
-          // Remove user data from localStorage and redirect to login page
+          // Clear localStorage and redirect to login
           localStorage.removeItem("token");
           localStorage.removeItem("username");
-          localStorage.removeItem("role"); // Ensure role is also removed
+          localStorage.removeItem("role");
           navigate("/login");
         }}
       >
@@ -50,4 +53,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard4;

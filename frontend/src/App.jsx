@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
-import Dashboard from "./Dashboard";
-import Dashboard1 from "./Dashboard1";
+import CHUA from "./Dashboard_Chua";
 import Dashboard3 from "./Dashboard3";
+import Dashboard4 from "./Dashboard4";
 
 function App() {
   return (
@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/staff" element={<Dashboard1 />} />
+        <Route path="/chua" element={<CHUA />} />
         <Route path="/staff2" element={<Dashboard3 />} />
+        <Route path="/dashboard4" element={<Dashboard4 />} />
       </Routes>
     </Router>
   );

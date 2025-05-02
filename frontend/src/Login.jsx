@@ -43,6 +43,10 @@ const Login = () => {
       <Button variant="contained" color="primary" fullWidth onClick={handleLogin}>
         Login
       </Button>
+      <div style={{ margin: "10px 0" }}></div>
+      <Button variant="contained" color="secondary" fullWidth onClick={() => navigate("/")}>
+        Register
+      </Button>
     </Container>
   );
 };

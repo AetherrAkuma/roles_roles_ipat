@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 
-const Dashboard4 = () => {
+const Dashboard_Bebar = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [userRole, setRole] = useState("");
@@ -19,21 +19,21 @@ const Dashboard4 = () => {
       setUser(storedUser);
       setRole(storedRole);
 
-      // If the user is not a staff member, redirect them
-      if (storedRole !== "Staff3") {
-        console.log("Eto ata Not Staff, redirecting to login..."); // Debugging log
+      // If the user is not authorized for this dashboard, redirect them
+      if (storedRole !== "Bebar") {
+        console.log("Not Bebar, redirecting to login..."); // Debugging log
         navigate("/login");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
-
+      navigate("/login");
     }
   }, [navigate]);
 
   return (
     <Container>
       <Typography variant="h4">
-        Welcome {userRole} {user}
+        Welcome {userRole} {user} to Bebar Dashboard
       </Typography>
 
       <Button
@@ -53,4 +53,4 @@ const Dashboard4 = () => {
   );
 };
 
-export default Dashboard4;
+export default Dashboard_Bebar;

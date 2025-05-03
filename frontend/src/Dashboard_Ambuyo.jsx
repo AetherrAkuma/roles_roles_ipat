@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 
-const CHUA = () => { // Updated component name
+const Dashboard_Ambuyo = () => { // Updated component name
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [userRole, setRole] = useState("");
@@ -20,9 +20,9 @@ const CHUA = () => { // Updated component name
       setRole(storedRole);
 
       // If the user is not authorized for this dashboard, redirect them
-      if (storedRole !== "CHUA") { // Updated role check
-        console.log("Not CHUA, redirecting to login..."); // Debugging log
-        navigate("/login");
+      if (storedRole !== "Ambuyo") { // Updated role check
+        console.log("Not Ambuyo, redirecting to other roles..."); // Debugging log
+        navigate("/Dashboard_Bebar");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
@@ -33,7 +33,7 @@ const CHUA = () => { // Updated component name
   return (
     <Container>
       <Typography variant="h4">
-        Welcome {userRole} {user} to CHUA Dashboard
+        Welcome {userRole} {user} to Ambuyo Dashboard
       </Typography>
 
       <Button
@@ -53,4 +53,4 @@ const CHUA = () => { // Updated component name
   );
 };
 
-export default CHUA;
+export default Dashboard_Ambuyo;

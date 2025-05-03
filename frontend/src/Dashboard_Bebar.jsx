@@ -20,7 +20,7 @@ const Dashboard_Bebar = () => {
       setRole(storedRole);
 
       // If the user is not authorized for this dashboard, redirect them
-      if (storedRole !== "Bebar") {
+      if (storedRole !== "Staff_2") {
         console.log("Not Bebar, redirecting to login..."); // Debugging log
         navigate("/login");
       }

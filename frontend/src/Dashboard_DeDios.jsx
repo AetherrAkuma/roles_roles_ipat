@@ -20,9 +20,9 @@ const Dashboard_DeDios = () => {
       setRole(storedRole);
 
       // If the user is not a staff member, redirect them
-      if (storedRole !== "Staff3") {
+      if (storedRole !== "Staff_3") {
         console.log("Eto ata Not Staff, redirecting to login..."); // Debugging log
-        navigate("/Dashboard_Suipan");
+        navigate("/login");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log

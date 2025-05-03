@@ -28,10 +28,19 @@ const Login = () => {
   
       alert("Login successful!");
       // Redirect to dashboard based on role
-      if (response.data.role === "Staff2") {
-        navigate("/staff2");
+      if (response.data.role === "Admin") {
+        navigate("/Dashboard_Chua");
+      } else if (response.data.role === "Staff_1") {
+        navigate("/Dashboard_Ambuyo");
+      } else if (response.data.role === "Staff_2") {
+        navigate("/Dashboard_Bebar");
+      } else if (response.data.role === "Staff_3") {
+        navigate("/Dashboard_DeDios");
+      } else if (response.data.role === "Staff_4") {
+        navigate("/Dashboard_Morales");
+      } else {
+        navigate("");
       }
-      navigate("/dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Invalid credentials");
     }

@@ -19,10 +19,9 @@ const Dashboard_Ambuyo = () => { // Updated component name
       setUser(storedUser);
       setRole(storedRole);
 
-      // If the user is not authorized for this dashboard, redirect them
-      if (storedRole !== "Ambuyo") { // Updated role check
-        console.log("Not Ambuyo, redirecting to other roles..."); // Debugging log
-        navigate("/Dashboard_Bebar");
+      if (storedRole !== "Staff_1") { // Updated role check
+        console.log("Not Ambuyo, redirecting to other roles...");
+        navigate("/login");
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
@@ -33,7 +32,7 @@ const Dashboard_Ambuyo = () => { // Updated component name
   return (
     <Container>
       <Typography variant="h4">
-        Welcome {userRole} {user} to Ambuyo Dashboard
+        Welcome {userRole} {user}
       </Typography>
 
       <Button

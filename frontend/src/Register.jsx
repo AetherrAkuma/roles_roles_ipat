@@ -33,6 +33,10 @@ const Register = () => {
       <Button variant="contained" color="primary" fullWidth onClick={handleRegister}>
         Register
       </Button>
+      <div style={{ margin: "10px 0" }}></div>
+      <Button variant="contained" color="secondary" fullWidth onClick={() => navigate("/login")}>
+        Login
+      </Button>
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Typography, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
 const Dashboard_Morales = () => {
   const navigate = useNavigate();
@@ -35,9 +35,27 @@ const Dashboard_Morales = () => {
   }, [navigate]);
 
   return (
-    <Container>
+    <Box
+      sx={{
+        backgroundImage: `url('https://i.redd.it/aa2kzp93g6ac1.gif')`, // Background Image
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        minHeight: '100vh', // Minimum height is 100% of viewport height
+        width: '100vw', // Width is 100% of viewport width
+        display: 'flex', // Use flexbox to center content
+        flexDirection: 'column', // Stack children vertically
+        justifyContent: 'center', // Center content vertically
+        alignItems: 'center', // Center content horizontally
+        padding: '20px', // Add some internal padding
+        color: 'white', // Set text color for readability
+        textAlign: 'center', // Center text within the flex item
+        margin: 0, // Remove default margin
+        boxSizing: 'border-box'
+      }}
+    >
       <Typography variant="h4">
-        Welcome {userRole} {user}
+        Welcome {userRole} {user} to Morales Dashboard
       </Typography>
 
       {userRole === "Admin" && (
@@ -64,7 +82,7 @@ const Dashboard_Morales = () => {
       >
         Logout
       </Button>
-    </Container>
+    </Box>
   );
 };
 

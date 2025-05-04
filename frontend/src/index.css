@@ -23,9 +23,17 @@ a:hover {
 }
 
 body {
+  background-image: url("https://cdn.discordapp.com/attachments/1182277025256448061/1367860941550780507/image.png?ex=68181986&is=6816c806&hm=743084ecc45e52c0141ff667471b380579cf92e90b597514a1569dd7d9b42550&");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: '100vh';
+  width: '100vw';
+  display: 'flex';
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* margin-top: 150px; */
+  /* display: flex;
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +73,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.MuiContainer-root, .MuiContainer-maxWidthXs, .css-mzavur-MuiContainer-root {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #242424a1;  
+  width: 100vw;
+  
+
 }

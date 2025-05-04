@@ -19,9 +19,13 @@ const Dashboard_Ambuyo = () => { // Updated component name
       setUser(storedUser);
       setRole(storedRole);
 
-      if (storedRole !== "Staff_1") { // Updated role check
-        console.log("Not Ambuyo, redirecting to other roles...");
-        navigate("/login");
+      if (storedRole !== "Staff_1") { 
+        if (storedRole === "Admin") {
+          console.log("Admin access granted, no redirect needed.");
+        } else {
+          console.log("Not Staff_1, redirecting to login...");
+          navigate("/login"); 
+        }
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
@@ -50,9 +54,20 @@ const Dashboard_Ambuyo = () => { // Updated component name
       }}
     >
       <Typography variant="h4">
-        Welcome {userRole} {user}
+        Welcome {userRole} {user} to Ambuyo Dashboard
       </Typography>
-
+      
+      {/* add the button if the user is admin and redirect to the admin dashboard but if not then hide the button */}
+      {userRole === "Admin" && (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/Dashboard_Chua")} // Redirect to admin dashboard
+          sx={{ margin: '20px 0' }}
+        >
+          Go to Admin Dashboard
+        </Button>
+      )}
       <Button
         variant="contained"
         color="secondary"

@@ -71,6 +71,50 @@ const Dashboard_Chua = () => {
         variant="contained"
         color="secondary"
         onClick={() => {
+          // Redirect to another role's dashboard or page
+          navigate("/Dashboard_Ambuyo"); // Replace with actual route
+        }}
+        sx={{ marginTop: '20px' }}
+      >
+        Go to Staff_1 Role Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          // Redirect to another role's dashboard or page
+          navigate("/Dashboard_Bebar"); // Replace with actual route
+        }}
+        sx={{ marginTop: '20px' }}
+      >
+        Go to Staff_2 Role Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          // Redirect to another role's dashboard or page
+          navigate("/Dashboard_DeDios"); // Replace with actual route
+        }}
+        sx={{ marginTop: '20px' }}
+      >
+        Go to Staff_3 Role Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          // Redirect to another role's dashboard or page
+          navigate("/Dashboard_Morales");
+        }}
+        sx={{ marginTop: '20px' }}
+      >
+        Go to Staff_4 Role Dashboard
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
           // Clear localStorage and redirect to login
           localStorage.removeItem("token");
           localStorage.removeItem("username");

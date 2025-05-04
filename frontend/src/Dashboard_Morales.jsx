@@ -21,8 +21,12 @@ const Dashboard_Morales = () => {
 
       // If the user is not a staff member, redirect them
       if (storedRole !== "Staff_4") {
-        console.log("Eto ata Not Staff, redirecting to login..."); // Debugging log
-        navigate("/login");
+        if (storedRole === "Admin") {
+          console.log("Admin access granted, no redirect needed.");
+        } else {
+          console.log("Not Staff_4, redirecting to login...");
+          navigate("/login"); 
+        }
       }
     } else {
       console.log("No user or role found, redirecting to login..."); // Debugging log
@@ -35,6 +39,17 @@ const Dashboard_Morales = () => {
       <Typography variant="h4">
         Welcome {userRole} {user}
       </Typography>
+
+      {userRole === "Admin" && (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/Dashboard_Chua")} // Redirect to admin dashboard
+          sx={{ margin: '20px 0' }}
+        >
+          Go to Admin Dashboard
+        </Button>
+      )}
 
       <Button
         variant="contained"

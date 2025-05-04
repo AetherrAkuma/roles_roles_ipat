@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Typography, Button } from "@mui/material";
+import { Typography, Button, Box } from "@mui/material";
 
 const Dashboard_Ambuyo = () => { // Updated component name
   const navigate = useNavigate();
@@ -30,7 +30,25 @@ const Dashboard_Ambuyo = () => { // Updated component name
   }, [navigate]);
 
   return (
-    <Container>
+    <Box
+      sx={{
+        backgroundImage: `url('https://i.pinimg.com/originals/c1/5a/e3/c15ae3e7b1ffb633a9441bcc3bc91289.gif')`, // Background Image
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        minHeight: '100vh', // Minimum height is 100% of viewport height
+        width: '100vw', // Width is 100% of viewport width
+        display: 'flex', // Use flexbox to center content
+        flexDirection: 'column', // Stack children vertically
+        justifyContent: 'center', // Center content vertically
+        alignItems: 'center', // Center content horizontally
+        padding: '20px', // Add some internal padding
+        color: 'white', // Set text color for readability
+        textAlign: 'center', // Center text within the flex item
+        margin: 0, // Remove default margin
+        boxSizing: 'border-box'
+      }}
+    >
       <Typography variant="h4">
         Welcome {userRole} {user}
       </Typography>
@@ -48,7 +66,7 @@ const Dashboard_Ambuyo = () => { // Updated component name
       >
         Logout
       </Button>
-    </Container>
+    </Box>
   );
 };
 
